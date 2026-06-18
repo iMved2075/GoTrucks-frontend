@@ -1,7 +1,7 @@
 import SearchBox from "./SearchBox";
 const Body = () => {
   return (
-    <div className="bg-[url('./src/assets/trucks.png')] bg-cover bg-center h-full flex">
+    <div className="bg-[url('https://cms.eichertrucksandbuses.com/uploads/banner/48/e09edb5642e0c00d81fb438f8cd1e931.png')] bg-cover bg-center h-full flex">
       <SearchBox />
       <div className="flex flex-col items-start mt-18">
         <h1 className="text-7xl font-bold text-slate-800/80 text-center">
