@@ -171,15 +171,15 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="flex flex-col bg-white my-20 mx-38 rounded-3xl p-5 w-1/3 shadow-lg relative">
-      <h1 className="text-xl font-bold p-3">Need a truck?</h1>
+    <div className="relative mx-auto flex w-full max-w-xl flex-col rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-200 backdrop-blur sm:p-6">
+      <h1 className="p-2 text-xl font-bold sm:p-3">Need a truck?</h1>
 
       {!submitted ? (
         <form onSubmit={handleSubmit} className="relative">
           {/* Loading Location Input */}
           <div className="relative">
             <input
-              className="bg-neutral-100 my-5 mx-8 h-10 w-[calc(100%-4rem)] px-4 rounded-lg text-lg shadow-md shadow-emerald-300 outline-none"
+              className="my-3 h-12 w-full rounded-lg bg-neutral-100 px-4 text-base shadow-md shadow-emerald-300 outline-none sm:text-lg"
               type="text"
               placeholder="Enter loading location..."
               value={loadingQuery}
@@ -187,15 +187,15 @@ const SearchBox = () => {
             />
 
             {loadingLoading && (
-              <p className="mx-8 -mt-2 text-sm text-neutral-500">Searching...</p>
+              <p className="-mt-1 text-sm text-neutral-500">Searching...</p>
             )}
 
             {loadingError && (
-              <p className="mx-8 -mt-2 text-sm text-rose-600">{loadingError}</p>
+              <p className="-mt-1 text-sm text-rose-600">{loadingError}</p>
             )}
 
             {loadingResults.length > 0 && (
-              <ul className="absolute z-10 mx-8 mt-1 w-[calc(100%-4rem)] overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
+              <ul className="absolute left-0 right-0 z-10 mt-1 w-full overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
                 {loadingResults.map((place) => (
                   <li key={place.place_id}>
                     <button
@@ -219,7 +219,7 @@ const SearchBox = () => {
           {/* Unloading Location Input */}
           <div className="relative">
             <input
-              className="bg-neutral-100 my-5 mx-8 h-10 w-[calc(100%-4rem)] px-4 rounded-lg text-lg shadow-md shadow-red-400 outline-none"
+              className="my-3 h-12 w-full rounded-lg bg-neutral-100 px-4 text-base shadow-md shadow-red-400 outline-none sm:text-lg"
               type="text"
               placeholder="Enter unloading location..."
               value={unloadingQuery}
@@ -227,15 +227,15 @@ const SearchBox = () => {
             />
 
             {unloadingLoading && (
-              <p className="mx-8 -mt-2 text-sm text-neutral-500">Searching...</p>
+              <p className="-mt-1 text-sm text-neutral-500">Searching...</p>
             )}
 
             {unloadingError && (
-              <p className="mx-8 -mt-2 text-sm text-rose-600">{unloadingError}</p>
+              <p className="-mt-1 text-sm text-rose-600">{unloadingError}</p>
             )}
 
             {unloadingResults.length > 0 && (
-              <ul className="absolute z-10 mx-8 mt-1 w-[calc(100%-4rem)] overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
+              <ul className="absolute left-0 right-0 z-10 mt-1 w-full overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
                 {unloadingResults.map((place) => (
                   <li key={place.place_id}>
                     <button
@@ -256,9 +256,9 @@ const SearchBox = () => {
             )}
           </div>
 
-          <div className="flex flex-row justify-between my-5 mx-8 gap-4">
+          <div className="my-4 flex flex-col gap-4 sm:flex-row">
             <select
-              className="bg-neutral-100 h-10 px-4 rounded-lg text-lg shadow-md shadow-neutral-400 flex-1"
+              className="h-12 flex-1 rounded-lg bg-neutral-100 px-4 text-base shadow-md shadow-neutral-400 sm:text-lg"
               value={truckType}
               onChange={(e) => setTruckType(e.target.value)}
             >
@@ -268,7 +268,7 @@ const SearchBox = () => {
               <option value="Flatbed Truck">Flatbed Truck</option>
             </select>
             <input
-              className="bg-neutral-100 h-10 px-4 rounded-lg text-lg shadow-md shadow-neutral-400 flex-1 outline-none"
+              className="h-12 flex-1 rounded-lg bg-neutral-100 px-4 text-base shadow-md shadow-neutral-400 outline-none sm:text-lg"
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
@@ -276,12 +276,12 @@ const SearchBox = () => {
           </div>
 
           {formError && (
-            <p className="mx-8 text-sm text-rose-600 mb-4">{formError}</p>
+            <p className="mb-4 text-sm text-rose-600">{formError}</p>
           )}
 
           <button
             type="submit"
-            className="bg-emerald-500 text-white mt-16 w-[calc(100%-4rem)] mx-8 py-2 px-8 rounded-lg shadow-md shadow-emerald-300 hover:shadow-emerald-400 hover:cursor-pointer transition duration-300"
+            className="mt-8 w-full rounded-lg bg-emerald-500 px-8 py-3 text-white shadow-md shadow-emerald-300 transition duration-300 hover:cursor-pointer hover:shadow-emerald-400"
           >
             Search
           </button>
