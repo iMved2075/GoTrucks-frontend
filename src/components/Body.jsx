@@ -12,7 +12,7 @@ const Body = () => {
         <p className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800/80 my-4 lg:my-6">
           Your trusted partner for truck services
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <div className="flex flex-row gap-3 sm:gap-4">
           <button className="login-btn bg-green-700/90 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-lg shadow-md shadow-emerald-300 hover:shadow-emerald-400 hover:cursor-pointer transition duration-300 w-full sm:w-auto">
             Start Now
           </button>
