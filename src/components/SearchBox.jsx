@@ -256,9 +256,9 @@ const SearchBox = () => {
             )}
           </div>
 
-          <div className="flex flex-col justify-between my-3 sm:my-5 mx-3 sm:mx-4 gap-2 sm:gap-4">
+          <div className="flex justify-between my-3 sm:my-5 mx-3 sm:mx-4 gap-2 sm:gap-4">
             <select
-              className="bg-neutral-100 h-10 px-3 sm:px-4 rounded-lg text-sm sm:text-base shadow-md shadow-neutral-400 flex-1 border border-gray-300"
+              className="bg-neutral-100 w-1/2 h-10 px-3 sm:px-0 rounded-lg text-sm sm:text-base shadow-md shadow-neutral-400 flex-1 border border-gray-300"
               value={truckType}
               onChange={(e) => setTruckType(e.target.value)}
             >
@@ -268,7 +268,7 @@ const SearchBox = () => {
               <option value="Flatbed Truck">Flatbed Truck</option>
             </select>
             <input
-              className="bg-neutral-100 h-10 px-3 sm:px-4 rounded-lg text-sm sm:text-base shadow-md shadow-neutral-400 flex-1 outline-none border border-gray-300"
+              className="bg-neutral-100 w-1/2 h-10 px-3 sm:px-2 rounded-lg text-sm sm:text-base shadow-md shadow-neutral-400 flex-1 outline-none border border-gray-300"
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
@@ -294,7 +294,7 @@ const SearchBox = () => {
             <div className="space-y-3 sm:space-y-4">
               <div className="flex flex-col">
                 <span className="text-xs sm:text-sm font-semibold text-neutral-600">Loading Location</span>
-                <span className="text-sm sm:text-base text-slate-800 break-words">
+                <span className="text-sm sm:text-base text-slate-800 wrap-break-word">
                   {loadingPlace?.display_name}
                 </span>
                 <span className="text-xs text-neutral-500">
@@ -304,7 +304,7 @@ const SearchBox = () => {
 
               <div className="flex flex-col">
                 <span className="text-xs sm:text-sm font-semibold text-neutral-600">Unloading Location</span>
-                <span className="text-sm sm:text-base text-slate-800 break-words">
+                <span className="text-sm sm:text-base text-slate-800 wrap-break-word">
                   {unloadingPlace?.display_name}
                 </span>
                 <span className="text-xs text-neutral-500">
